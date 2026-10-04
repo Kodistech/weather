@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIWeather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <span class="logo">AI Weather</span>
+            </div>
+            <div class="header-right">
+                <button id="refresh-btn" class="refresh-btn">⟳</button>
+            </div>
+        </header>
+
+        <!-- City Input -->
+        <div class="city-section">
+            <input type="text" id="city-input" placeholder="Nhập tên thành phố (Hà Nội, TP.HCM, Đà Nẵng...)" autocomplete="off">
+            <button id="search-btn">Xem thời tiết</button>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card">
+            <!-- Time -->
+            <div class="time-bar">
+                <span id="current-time">8:48 AM</span>
+            </div>
+
+            <!-- Main Weather -->
+            <div class="weather-main">
+                <div class="weather-icon">
+                    <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Overcast Clouds">
+                </div>
+                <div class="temp-display">
+                    <div class="temp-value" id="temp-value">29°</div>
+                    <div class="temp-unit">°C</div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="description">
+                <div id="weather-desc">Overcast Clouds</div>
+                <div id="feels-like">Feels like 34°</div>
+            </div>
+
+            <!-- Details Grid - 3 cột ngang -->
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-icon">🌬️</span>
+                    <div>
+                        <div id="wind-label">Wind</div>
+                        <div id="wind-value">0.5 m/s 249</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💧</span>
+                    <div>
+                        <div id="humidity-label">Humidity</div>
+                        <div id="humidity-value">85%</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">👁️</span>
+                    <div>
+                        <div id="visibility-label">Visibility</div>
+                        <div id="visibility-value">10km</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">📊</span>
+                    <div>
+                        <div id="pressure-label">Pressure</div>
+                        <div id="pressure-value">1013 hPa</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">☀️</span>
+                    <div>
+                        <div id="uv-label">UV Index</div>
+                        <div id="uv-value">undefined UV</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🌧️</span>
+                    <div>
+                        <div id="dewpoint-label">Dew Point</div>
+                        <div id="dewpoint-value">25°C</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hourly Forecast -->
+            <div class="hourly-section">
+                <div class="section-header">
+                    <h2>Hourly forecast</h2>
+                </div>
+                <div class="hourly-grid" id="hourly-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Button -->
+    <button id="ai-button" class="ai-button">
+        <span class="ai-button-text">AI Weather</span>
+    </button>
+
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <span id="toast-text"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

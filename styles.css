@@ -1,0 +1,303 @@
+/* styles.css - Đã chỉnh để 3 cột ngang + blur card */
+
+:root {
+    --primary-bg: #0f172a;
+    --card-bg: rgba(15, 23, 42, 0.92);
+    --accent: #22d3ee;
+    --text: #e0f2fe;
+    --text-secondary: #94a3b8;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--primary-bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+}
+
+.refresh-btn {
+    width: 34px;
+    height: 34px;
+    background: rgba(148, 163, 184, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.refresh-btn:hover {
+    background: rgba(148, 163, 184, 0.2);
+    transform: rotate(180deg);
+}
+
+/* City Section - giống hình */
+.city-section {
+    padding: 20px 20px 12px;
+    display: flex;
+    gap: 10px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 14px 18px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 9999px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+}
+
+#city-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+}
+
+#search-btn {
+    background: #22d3ee;
+    color: #0f172a;
+    border: none;
+    padding: 0 28px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#search-btn:hover {
+    background: #67e8f9;
+    transform: translateY(-2px);
+}
+
+/* Weather Card - mờ + blur */
+.weather-card {
+    flex: 1;
+    background: var(--card-bg);
+    margin: 0 16px 16px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Time Bar */
+.time-bar {
+    padding: 16px 24px 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Main Weather */
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 24px;
+}
+
+.weather-icon img {
+    width: 110px;
+    height: 110px;
+}
+
+.temp-display {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.temp-value {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+}
+
+.temp-unit {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 12px;
+}
+
+/* Description */
+.description {
+    text-align: center;
+    padding: 8px 0 4px;
+}
+
+.weather-desc {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.feels-like {
+    font-size: 17px;
+    color: var(--text-secondary);
+}
+
+/* Details Grid - 3 cột ngang */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px 24px;
+    gap: 14px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.detail-item:hover {
+    background: rgba(148, 163, 184, 0.1);
+    transform: translateY(-2px);
+}
+
+.detail-icon {
+    font-size: 22px;
+    width: 28px;
+}
+
+/* Hourly Forecast */
+.hourly-section {
+    padding: 0 24px 24px;
+}
+
+.section-header h2 {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.hourly-grid {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+}
+
+.hourly-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.hourly-item {
+    flex: 0 0 68px;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 16px;
+    padding: 10px 8px 8px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.hourly-item:hover {
+    background: rgba(148, 163, 184, 0.1);
+}
+
+.hourly-time {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.hourly-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 6px;
+}
+
+.hourly-temp {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e2937;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    font-size: 15px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 200;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+/* AI Button */
+.ai-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #22d3ee, #67e8f9);
+    color: #0f172a;
+    border: none;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    font-size: 28px;
+    box-shadow: 0 10px 15px -3px rgb(34 211 238 / 0.4);
+    cursor: pointer;
+    z-index: 300;
+}
+
+.ai-button:hover {
+    transform: scale(1.12) rotate(12deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .details-grid { grid-template-columns: repeat(2, 1fr); }
+    .weather-main { gap: 20px; flex-direction: column; align-items: center; }
+    .weather-icon img { width: 92px; height: 92px; }
+    .temp-value { font-size: 58px; }
+}
